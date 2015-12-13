@@ -6,7 +6,7 @@ for file in "$@"
 do
   (
     echo "version: 1.1"
-    echo "directory: gnuradio"
+    echo "directory: ocvc"
     echo "filename: $file"
   )> $file.directive
   echo "$passphrase" | gpg --passphrase-fd 0 --clearsign $file.directive

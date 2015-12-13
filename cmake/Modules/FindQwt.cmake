@@ -15,14 +15,13 @@ find_path(QWT_INCLUDE_DIRS
   /usr/include/qwt6
   /usr/include/qwt-qt4
   /usr/include/qwt
-  /usr/include/qwt5
   /opt/local/include/qwt
+  /opt/local/lib/qwt.framework/Headers
   /sw/include/qwt
-  /usr/local/lib/qwt.framework/Headers
 )
 
 find_library (QWT_LIBRARIES
-  NAMES qwt6 qwt6-qt4 qwt qwt-qt4
+  NAMES qwt qwt6 qwt-qt4
   HINTS
   ${CMAKE_INSTALL_PREFIX}/lib
   ${CMAKE_INSTALL_PREFIX}/lib64
@@ -30,25 +29,22 @@ find_library (QWT_LIBRARIES
   /usr/local/lib
   /usr/lib
   /opt/local/lib
+  /opt/local/lib/qwt.framework
   /sw/lib
-  /usr/local/lib/qwt.framework
 )
 
 set(QWT_FOUND FALSE)
 if(QWT_INCLUDE_DIRS)
   file(STRINGS "${QWT_INCLUDE_DIRS}/qwt_global.h"
     QWT_STRING_VERSION REGEX "QWT_VERSION_STR")
-  set(QWT_WRONG_VERSION True)
-  set(QWT_VERSION "No Version")
   string(REGEX MATCH "[0-9]+.[0-9]+.[0-9]+" QWT_VERSION ${QWT_STRING_VERSION})
   string(COMPARE LESS ${QWT_VERSION} "5.2.0" QWT_WRONG_VERSION)
-  string(COMPARE GREATER ${QWT_VERSION} "6.2.0" QWT_WRONG_VERSION)
 
   message(STATUS "QWT Version: ${QWT_VERSION}")
   if(NOT QWT_WRONG_VERSION)
     set(QWT_FOUND TRUE)
   else(NOT QWT_WRONG_VERSION)
-    message(STATUS "QWT Version must be >= 5.2 and <= 6.2.0, Found ${QWT_VERSION}")
+    message(STATUS "QWT Version must be >= 5.2, Found ${QWT_VERSION}")
   endif(NOT QWT_WRONG_VERSION)
 
 endif(QWT_INCLUDE_DIRS)

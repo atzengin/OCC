@@ -1,5 +1,5 @@
 #!/bin/sh
 
 if [ "$1" = "remove" ]; then
-    @CMAKE_INSTALL_PREFIX@/libexec/gnuradio/grc_setup_freedesktop uninstall
+    @CMAKE_INSTALL_PREFIX@/libexec/ocvc/occ_setup_freedesktop uninstall
 fi

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=OCC
+Exec=ocvc-companion %F
+Categories=Development;
+MimeType=application/ocvc-occ;
+Icon=ocvc-occ

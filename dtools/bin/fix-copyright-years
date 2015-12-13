@@ -7,12 +7,12 @@ import multiprocessing
 
 def command(*args): return subprocess.Popen(args, stdout=subprocess.PIPE).communicate()[0]
 
-def is_gnuradio_co_source(lines):
+def is_ocvc_co_source(lines):
     for line in lines[:20]:
         if 'GNU Radio is free software' in line: return True
     return False
 
-def get_gnuradio_co_line(lines):
+def get_ocvc_co_line(lines):
     for i, line in enumerate(lines[:5]):
         if 'Copyright' in line and 'Free Software Foundation' in line: return line, i
     return None
@@ -21,7 +21,7 @@ def fix_co_years(files):
     for file in files:
         print file
         lines = open(file).readlines()
-        if not is_gnuradio_co_source(lines): continue
+        if not is_ocvc_co_source(lines): continue
 
         #extract the years from the git history
         years = set(map(
@@ -33,7 +33,7 @@ def fix_co_years(files):
         ))
 
         #extract line and line number for co line
-        try: line, num = get_gnuradio_co_line(lines)
+        try: line, num = get_ocvc_co_line(lines)
         except: continue
 
         #extract years from co string

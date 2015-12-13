@@ -1,0 +1,19 @@
+oc_modtool: Swiss Army Knife for editing GNU Radio modules and -components.
+
+Adding a new subcommand
+=======================
+
+* Add a new file called modtool_SUBCOMMAND
+* Have a look at the other subcommands, it must inherit from ModTool
+* Add that file to __init__.py and CMakeLists.txt
+
+The oc-newmod directory
+=======================
+This dir basically contains a copy of oc-howto-write-a-block from the ocvc
+sources, with some differences:
+- All example blocks, apps, occ files (...) and references thereto in the
+  CMake files are removed
+- In the top-level CMake file, the project is called 'oc-howto'.
+- Any time anything relevant is changed in oc-howto-write-a-block, it should
+  be changed here, too.
+
