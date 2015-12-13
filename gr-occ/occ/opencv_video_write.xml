@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<block>
+  <name>video_write</name>
+  <key>opencv_video_write</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.video_write()</make>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+</block>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+  <name>equalize_histogram</name>
+  <key>opencv_equalize_histogram</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.equalize_histogram()</make>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <nports>MAX_IN</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <nports>MAX_OUT</nports>
+  </source>
+</block>

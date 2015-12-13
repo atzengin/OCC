@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<block>
+  <name>image_source</name>
+  <key>opencv_image_source</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.image_source($file, $source_type)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Source File</name>
+    <key>file</key>
+    <value></value>
+    <type>file_open</type>
+  </param>
+
+  <param>
+    <name>Source Type</name>
+    <key>source_type</key>
+    <type>int</type>
+    <option>
+      <name>Image</name>
+      <key>0</key>
+    </option>
+<!--    <option>
+      <name>Camera 0</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Camera 1</name>
+      <key>2</key>
+    </option>
+    <option>
+      <name>Camera 2</name>
+      <key>3</key>
+    </option>
+    <option>
+      <name>Camera 3</name>
+      <key>4</key>
+    </option>-->
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+	<doc>
+Image Source takes a grayscale image file as input and passes the pixel values to the next block.
+	</doc>
+</block>

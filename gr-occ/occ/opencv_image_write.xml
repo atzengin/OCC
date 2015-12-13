@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<block>
+  <name>image_write</name>
+  <key>opencv_image_write</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.image_write()</make>
+	<sink>
+		<name>in</name>
+		<type>float</type>
+	</sink>
+	<doc>
+Writes the image to an external image file
+	</doc>
+</block>

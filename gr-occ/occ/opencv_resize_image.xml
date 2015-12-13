@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<block>
+  <name>resize_image</name>
+  <key>opencv_resize_image</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.resize_image($width, $height, $fx, $fy, $interpolation)</make>
+  <param>
+    <name>Resize to N pixel width</name>
+    <key>width</key>
+    <value>320</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Resize to N pixel height</name>
+    <key>height</key>
+    <value>640</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Resize to scale x factor</name>
+    <key>fx</key>
+    <value>0</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Resize to scale y factor</name>
+    <key>fy</key>
+    <value>0</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Interpolation Type</name>
+    <key>interpolation</key>
+    <type>int</type>
+    <option>
+      <name>INTER_NEAREST</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>INTER_LINEAR</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>INTER_AREA</name>
+      <key>2</key>
+    </option>
+    <option>
+      <name>INTER_CUBIC</name>
+      <key>3</key>
+    </option>
+    <option>
+      <name>INTER_LANCZOS4</name>
+      <key>4</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <nports>MAX_IN</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <nports>MAX_OUT</nports>
+  </source>
+</block>

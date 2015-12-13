@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<block>
+  <name>convert_color</name>
+  <key>opencv_convert_color</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.convert_color($code)</make>
+  <param>
+    <name>Convert to color space</name>
+    <key>code</key>
+    <type>int</type>
+    <option>
+      <name>CV_BGR2GRAY</name>
+      <key>6</key>
+    </option>
+    <option>
+      <name>CV_BGR2XYZ</name>
+      <key>32</key>
+    </option>
+    <option>
+      <name>CV_BGR2YCrCb</name>
+      <key>36</key>
+    </option>
+    <option>
+      <name>CV_BGR2HSV</name>
+      <key>40</key>
+    </option>
+    <option>
+      <name>CV_BGR2HLS</name>
+      <key>52</key>
+    </option>
+    <option>
+      <name>CV_BGR2Lab</name>
+      <key>44</key>
+    </option>
+    <option>
+      <name>CV_BGR2Luv</name>
+      <key>50</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <nports>MAX_IN</nports>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+    <nports>MAX_OUT</nports>
+  </source>
+</block>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>video_source</name>
+  <key>opencv_video_source</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.video_source($fileName, $source_type)</make>
+  <param>
+    <name>Source</name>
+    <key>fileName</key>
+	<value></value>
+    <type>file_open</type>
+  </param>
+
+  <param>
+    <name>Source Type</name>
+    <key>source_type</key>
+    <type>int</type>
+    <option>
+      <name>Camera</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Video File</name>
+      <key>1</key>
+    </option>
+
+</param>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

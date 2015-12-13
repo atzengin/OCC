@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>http_video_sink</name>
+  <key>opencv_http_video_sink</key>
+  <category>opencv</category>
+  <import>import opencv</import>
+  <make>opencv.http_video_sink($ip, $port)</make>
+
+  <param>
+    <name>IP Address</name>
+    <key>ip</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Port Number</name>
+    <key>port</key>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+</block>
